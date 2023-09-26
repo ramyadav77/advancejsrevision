@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basicsOfJavascript</title>
+</head>
+<body>
+    <h1>have you read comments!</h1>
+    <!--  -->
+    <!--js is a high level,dynamically-typed and interpreted scripting language created by brendan eich at netscap in 1995. 
+    
+    BASICS OF JAVASCRIPT
+     VARIABLES-:
+     var name ="john";
+     let age =30;
+     const pi=3.14;
+     DATATYPES-:
+     let num=42;
+     let text="hello js !"
+     let isTrue=true;
+     let fruits=['apple','banana','cherry'];
+     let person={
+        name:"ram",
+        age:20
+     };
+     OPERATORS-:
+      AIRTHMETIC-:
+      +,-,*,/,%
+      COMPARISION-:
+      ==,===,!=,!==,>,<,>=,<=
+      LOGICAL -:
+      &&,||,!
+      ASSIGNMENT-:
+      =,+=,-=,*=,/=
+     CONDITIONAL STATEMENT-:
+     IF STATEMENT-:
+       if (condition){
+        //.....
+       }else{
+        //.....
+       }
+
+     SWITCH STATEMENT-:
+       switch(expression){
+        case value1:
+        //...
+        break;
+        case value2:
+        //....
+        break;
+        default:
+        //....
+       }
+     TERNARY STATEMENT-:
+     const result=(condition)?valuetrue:valuefalse;
+     
+     LOOPS
+      FOR LOOP-:
+      
+        for(){
+
+        }
+    -->
+   <h2> let's  see functions walkthrough</h2>
+   <button id="btn">Click</button>
+   <br>
+   <h1 id="output"></h1>
+   <hr>
+   <!-- <form action="" id="myform">
+    <input type="text" name="username" placeholder="enter name"/>
+    <input type="password" name="" id="" placeholder="  enter strong password"/>
+    <button type="submit" value="">send</button>
+
+   </form> -->
+      
+    <script>
+
+        function add(a,b){
+        return a+b;
+        }
+        const result=add(7,9);
+        console.log(result);
+
+        const subtract=function(a,b){
+            return a-b;
+        }
+        console.log(subtract(9,7));
+
+        (function(){
+            const message="my nam is ram ";
+            console.log(message)
+
+        })();
+
+        const multiply=(a,b)=>a*b;
+        console.log(multiply(5,5));
+
+
+        // setTimeout
+        function delay(){
+            console.log("message displayed after two second ");
+        }
+        setTimeout(delay,2000);
+
+
+        // callback ki kahani
+        function fetchData(callback){
+            setTimeout(function(){
+             console.log("data fetched");
+             callback();
+            },2000);
+        }
+         function displayData(){
+            console.log("data displayed");
+         }
+
+         fetchData(displayData);
+
+
+        //  callback 2 ki kahani h dosto
+      const button=document.getElementById("btn");
+      const output=document.getElementById("output");
+
+      button.addEventListener("mouseover",function(){
+        output.textContent="button ko kisi ne click kiya h"
+      });
+
+      button.addEventListener("click",function(){
+        output.textContent=""
+      });
+
+    //   const form=document.getElementById("myform");
+    //   form.addEventListener("submit",function(event){
+    //     event.preventDefault();
+    //     alert("form submitted")
+    //   });
+    // 
+
+
+
+    // promises
+    function fetchData(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                const data="data feched bia promise"
+                resolve(data);
+            },5000);
+
+        });
+    }
+
+    fetchData()
+            .then(function(data){
+                console.log(data);
+            })
+            .catch(function(error){
+             console.log(error)
+            });
+
+
+    </script>
+</body>
+</html>
